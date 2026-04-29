@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="ALMANYA LUBRICANTS FACTORY (ALF) is an advanced lubricants manufacturing facility in the Amriya Public Free Zone, engineering high-yield industrial lubricants and OEM-certified motor oils.">
+    <meta property="og:title" content="ALMANYA | Industrial Lubricants Factory">
+    <meta property="og:description"
+        content="High-yield industrial lubricants and OEM-certified motor oils engineered to strict international standards.">
+    <meta property="og:image" content="https://almanya-luboil.com/assets/logo.png">
+    <meta property="og:url" content="https://almanya-luboil.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>ALMANYA | Industrial Lubricants Factory</title>
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Roboto+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        almanya: {
+                            light: '#f4f4f5',
+                            medLight: '#e4e4e7',
+                            darkText: '#18181b',
+                            grayText: '#3f3f46',
+                            red: '#cc0000',
+                            gold: '#d4af37',
+                            border: '#d4d4d8'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Roboto Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Hide scrollbar for technical dashboard feel */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #e4e4e7;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #a1a1aa;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #cc0000;
+        }
+
+        /* Liquid Glass Effect — Subtle */
+        .liquid-glass {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 50%, rgba(255, 255, 255, 0.08) 100%);
+            backdrop-filter: blur(8px) saturate(120%);
+            -webkit-backdrop-filter: blur(8px) saturate(120%);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow:
+                0 4px 16px rgba(0, 0, 0, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15),
+                inset 0 -1px 0 rgba(255, 255, 255, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .liquid-glass::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(105deg, transparent 40%, rgba(255, 255, 255, 0.05) 45%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.05) 55%, transparent 60%);
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-almanya-light text-almanya-darkText font-sans antialiased selection:bg-almanya-red selection:text-white overflow-hidden">
+
+    <!-- Preloader -->
+    <div id="preloader"
+        class="fixed inset-0 z-[100] bg-white flex flex-col items-center justify-center transition-all duration-1000">
+        <img src="assets/logo.png" alt="ALMANYA Loading" class="h-20 md:h-28 w-auto animate-pulse mb-8">
+        <div class="h-1 w-48 bg-almanya-light overflow-hidden rounded-full">
+            <div class="h-full bg-almanya-red w-full animate-[progress_1s_ease-in-out]"></div>
+        </div>
+    </div>
+
+    <nav class="fixed w-full z-50 top-0 liquid-glass border-b border-white/20 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 h-20 md:h-28 flex items-center justify-between">
+            <a href="#" class="flex-shrink-0">
+                <img src="assets/logo.png" alt="ALMANYA Logo" class="h-16 md:h-24 w-auto object-contain">
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 items-center text-sm font-bold tracking-wider text-almanya-darkText">
+                <a href="#about" class="hover:text-almanya-red transition-colors uppercase">About Us</a>
+                <a href="#fleet" class="hover:text-almanya-red transition-colors uppercase">Our Fleet</a>
+                <a href="https://wa.me/96171666311" target="_blank" rel="noopener noreferrer"
+                    class="px-5 py-2 border border-almanya-red text-almanya-red hover:bg-almanya-red hover:text-white transition-all uppercase">Contact
+                    Us</a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobile-menu-btn"
+                class="md:hidden text-almanya-darkText hover:text-almanya-red focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu"
+            class="fixed inset-0 bg-white z-40 transform translate-x-full transition-transform duration-300 md:hidden flex flex-col pt-24 px-6">
+            <button id="close-menu-btn"
+                class="absolute top-6 right-6 text-almanya-darkText hover:text-almanya-red focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </button>
+            <div class="flex flex-col space-y-8 text-xl font-black uppercase text-almanya-darkText tracking-wider">
+                <a href="#about" class="mobile-link hover:text-almanya-red transition-colors">About Us</a>
+                <a href="#fleet" class="mobile-link hover:text-almanya-red transition-colors">Our Fleet</a>
+                <a href="https://wa.me/96171666311" target="_blank" rel="noopener noreferrer"
+                    class="mobile-link text-almanya-red">Contact Us</a>
+            </div>
+    </nav>
+
+    <header
+        class="relative md:h-screen flex flex-col items-start md:items-center justify-start md:justify-center overflow-hidden bg-white md:bg-transparent pt-28 pb-16 md:pt-0 md:pb-0">
+        <div class="absolute inset-0 w-full h-full z-0">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover">
+                <source src="assets/main.mp4" type="video/mp4">
+            </video>
+            <div class="absolute inset-0 bg-white/5"></div>
+        </div>
+
+        <div class="relative z-10 w-full max-w-7xl mx-auto px-6 md:pt-32 flex items-start">
+            <div class="max-w-[90vw] sm:max-w-md md:max-w-xl liquid-glass p-4 sm:p-5 md:p-8 rounded-2xl">
+                <p
+                    class="font-mono text-almanya-red font-bold text-[10px] md:text-sm mb-2 md:mb-3 tracking-widest uppercase">
+                    Amriya Free Zone, Egypt</p>
+                <h1
+                    class="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-black leading-tight mb-2 md:mb-5 uppercase">
+                    <span class="text-almanya-darkText">Engineered</span><br>
+                    <span class="text-almanya-gold">for Peak</span><br>
+                    <span class="text-almanya-red">Performance.</span>
+                </h1>
+                <p
+                    class="text-almanya-grayText text-xs sm:text-sm md:text-lg max-w-lg mb-4 md:mb-8 font-mono font-medium leading-relaxed">
+                    High-yield industrial lubricants and OEM-certified motor oils. Formulated for maximum thermal
+                    stability and engine protection.
+                </p>
+
+                <div class="flex flex-wrap gap-2 sm:gap-3">
+                    <a href="#fleet"
+                        class="inline-block bg-almanya-red text-white px-4 py-2 sm:px-5 sm:py-2.5 md:px-7 md:py-3.5 text-[10px] sm:text-xs md:text-sm text-center font-bold tracking-widest hover:bg-red-700 transition-all duration-300 uppercase shadow-xl hover:shadow-almanya-red/50 hover:-translate-y-1">
+                        Explore Our Fleet
+                    </a>
+                    <a href="#contact"
+                        class="inline-block bg-almanya-darkText text-white px-4 py-2 sm:px-5 sm:py-2.5 md:px-7 md:py-3.5 text-[10px] sm:text-xs md:text-sm text-center font-bold tracking-widest hover:bg-almanya-gold transition-all duration-300 uppercase shadow-xl hover:-translate-y-1">
+                        Request a Quote
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="fleet" class="py-20 bg-white border-y border-almanya-border">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-black text-almanya-darkText uppercase">Our Product Fleet</h2>
+                <div class="h-1 w-20 bg-almanya-gold mx-auto mt-4"></div>
+            </div>
+
+            <div
+                class="flex flex-wrap justify-center gap-6 reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
+                <div onclick="openProductModal('Gasoline Engine Oils', 'assets/Gasoline.png', 'Formulated for modern gasoline engines to provide superior protection against wear, deposits, and sludge buildup. Meets latest API standards.')"
+                    class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-almanya-light border border-almanya-border p-8 hover:-translate-y-2 hover:shadow-xl hover:border-almanya-red/30 transition-all duration-300 group cursor-pointer flex flex-col">
+                    <div
+                        class="text-almanya-gold text-4xl mb-4 font-black opacity-30 group-hover:opacity-100 transition-opacity font-mono">
+                        01</div>
+                    <h3 class="text-xl font-bold text-almanya-darkText uppercase tracking-wide mb-8 flex-grow">Gasoline
+                        Engine Oils</h3>
+                    <div class="relative h-48 w-full mt-auto">
+                        <img src="assets/Gasoline.png" alt="Gasoline Showcase" loading="lazy"
+                            class="absolute inset-0 w-full h-full object-contain mix-blend-multiply opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
+                    </div>
+                </div>
+                <div onclick="openProductModal('Diesel Engine Oils', 'assets/Diesel.png', 'Heavy-duty diesel engine oils engineered for extreme performance under high loads. Ensures excellent thermal stability and long drain intervals.')"
+                    class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-almanya-light border border-almanya-border p-8 hover:-translate-y-2 hover:shadow-xl hover:border-almanya-red/30 transition-all duration-300 group cursor-pointer flex flex-col">
+                    <div
+                        class="text-almanya-gold text-4xl mb-4 font-black opacity-30 group-hover:opacity-100 transition-opacity font-mono">
+                        02</div>
+                    <h3 class="text-xl font-bold text-almanya-darkText uppercase tracking-wide mb-8 flex-grow">Diesel
+                        Engine Oils</h3>
+                    <div class="relative h-48 w-full mt-auto">
+                        <img src="assets/Diesel.png" alt="Diesel Showcase" loading="lazy"
+                            class="absolute inset-0 w-full h-full object-contain mix-blend-multiply opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
+                    </div>
+                </div>
+                <div onclick="openProductModal('Marine Lubricants', 'assets/marine.png', 'Specialized marine grade lubricants designed to protect marine engines against corrosion, rust, and extreme maritime operating conditions.')"
+                    class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-almanya-light border border-almanya-border p-8 hover:-translate-y-2 hover:shadow-xl hover:border-almanya-red/30 transition-all duration-300 group cursor-pointer flex flex-col">
+                    <div
+                        class="text-almanya-gold text-4xl mb-4 font-black opacity-30 group-hover:opacity-100 transition-opacity font-mono">
+                        03</div>
+                    <h3 class="text-xl font-bold text-almanya-darkText uppercase tracking-wide mb-8 flex-grow">Marine
+                        Lubricants</h3>
+                    <div class="relative h-48 w-full mt-auto">
+                        <img src="assets/marine.png" alt="Marine Showcase" loading="lazy"
+                            class="absolute inset-0 w-full h-full object-contain mix-blend-multiply opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
+                    </div>
+                </div>
+                <div onclick="openProductModal('Industrial & Hydraulic Oils', 'assets/Industrial.png', 'High-viscosity index hydraulic fluids engineered for minimal wear and consistent performance in industrial machinery systems.')"
+                    class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-almanya-light border border-almanya-border p-8 hover:-translate-y-2 hover:shadow-xl hover:border-almanya-red/30 transition-all duration-300 group cursor-pointer flex flex-col">
+                    <div
+                        class="text-almanya-gold text-4xl mb-4 font-black opacity-30 group-hover:opacity-100 transition-opacity font-mono">
+                        04</div>
+                    <h3 class="text-xl font-bold text-almanya-darkText uppercase tracking-wide mb-8 flex-grow">
+                        Industrial & Hydraulic Oils</h3>
+                    <div class="relative h-48 w-full mt-auto">
+                        <img src="assets/Industrial.png" alt="Industrial Showcase" loading="lazy"
+                            class="absolute inset-0 w-full h-full object-contain mix-blend-multiply opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
+                    </div>
+                </div>
+                <div onclick="openProductModal('Gear & Turbine Oils', 'assets/Gear.png', 'Premium gear oils providing excellent load carrying capacity and protection against shock loading for industrial gearboxes and turbines.')"
+                    class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-almanya-light border border-almanya-border p-8 hover:-translate-y-2 hover:shadow-xl hover:border-almanya-red/30 transition-all duration-300 group cursor-pointer flex flex-col">
+                    <div
+                        class="text-almanya-gold text-4xl mb-4 font-black opacity-30 group-hover:opacity-100 transition-opacity font-mono">
+                        05</div>
+                    <h3 class="text-xl font-bold text-almanya-darkText uppercase tracking-wide mb-8 flex-grow">Gear &
+                        Turbine Oils</h3>
+                    <div class="relative h-48 w-full mt-auto">
+                        <img src="assets/Gear.png" alt="Gear Showcase" loading="lazy"
+                            class="absolute inset-0 w-full h-full object-contain mix-blend-multiply opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-almanya-medLight border-y border-almanya-border py-8" id="stats-bar">
+        <div
+            class="max-w-7xl mx-auto px-6 reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center font-mono text-sm">
+                <div class="p-4">
+                    <div class="text-almanya-gold text-2xl font-bold mb-1">ISO <span class="counter"
+                            data-target="9001">0</span>:<span class="counter" data-target="2015">0</span></div>
+                    <div class="text-almanya-grayText">Certified Facility</div>
+                </div>
+                <div class="p-4 border-l border-almanya-border">
+                    <div class="text-almanya-darkText text-2xl font-bold mb-1">API SN/CJ-<span class="counter"
+                            data-target="4">0</span></div>
+                    <div class="text-almanya-grayText">Exceeds Standards</div>
+                </div>
+                <div class="p-4 border-l border-almanya-border">
+                    <div class="text-almanya-darkText text-2xl font-bold mb-1">ACEA A<span class="counter"
+                            data-target="3">0</span>/B<span class="counter" data-target="4">0</span></div>
+                    <div class="text-almanya-grayText">European Compliance</div>
+                </div>
+                <div class="p-4 border-l border-almanya-border">
+                    <div class="text-almanya-gold text-2xl font-bold mb-1"><span class="counter"
+                            data-target="24">0</span>/<span class="counter" data-target="7">0</span></div>
+                    <div class="text-almanya-grayText">Global Export</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="quality-control" class="py-20 bg-white border-y border-almanya-border">
+        <div class="max-w-6xl mx-auto px-6">
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
+                <div class="relative h-64 md:h-96 w-full border border-almanya-border shadow-md">
+                    <img src="assets/qc.png" alt="Quality Control Process" loading="lazy"
+                        class="absolute inset-0 w-full h-full object-cover">
+                </div>
+                <div class="text-left">
+                    <h2 class="text-3xl md:text-4xl font-black mb-8 text-almanya-darkText uppercase">Quality <span
+                            class="text-almanya-gold">Control</span>
+                    </h2>
+                    <div class="text-almanya-grayText text-lg md:text-xl space-y-6 font-medium leading-relaxed">
+                        <p>
+                            ALF’s commitment to quality is further validated by its adherence to ISO 9001:2015
+                            standards, ensuring that every lubricant from synthetic engine oils to industrial grease
+                            meets the specific performance tiers required by API and ACEA specifications. Batch
+                            retention samples are archived for longitudinal stability monitoring, providing full
+                            traceability throughout the product lifecycle.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-almanya-light border-y border-almanya-border">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-black mb-8 text-almanya-darkText uppercase">About <span
+                    class="text-almanya-gold">ALF</span></h2>
+
+            <div class="w-full h-64 md:h-80 mb-10 border border-almanya-border bg-gray-200 shadow-md">
+                <iframe
+                    src="https://maps.google.com/maps?q=31.034748077392578,29.77499008178711&hl=ar&z=11&output=embed"
+                    width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                    tabindex="0" class="grayscale hover:grayscale-0 transition-all duration-700"></iframe>
+            </div>
+
+            <div
+                class="text-almanya-grayText text-lg md:text-xl space-y-6 font-medium leading-relaxed reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
+                <p>
+                    <strong class="text-almanya-red">ALMANYA LUBRICANTS FACTORY (ALF)</strong> is an advanced lubricants
+                    manufacturing facility situated in the Amriya Public Free Zone, featuring a $4 million turnkey plant
+                    engineered to strict international standards. The core of the operation utilizes a fully
+                    computerized Automated Batch Blending (ABB) system, ensuring exact chemical consistency, volumetric
+                    precision, and scalable quality control across every production batch.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-almanya-light border-y border-almanya-border">
+        <div
+            class="max-w-7xl mx-auto px-6 reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 shadow-2xl overflow-hidden border border-almanya-border">
+                <!-- Info Side — Dark Industrial Panel -->
+                <div
+                    class="bg-[#18181b] text-white p-10 md:p-14 flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-2 h-full bg-almanya-red"></div>
+                    <div>
+                        <p class="font-mono text-almanya-red font-bold text-xs tracking-widest uppercase mb-4">Get In
+                            Touch</p>
+                        <h2 class="text-3xl md:text-4xl font-black mb-6 uppercase leading-tight">Request a<br>Quote</h2>
+                        <div class="h-1 w-16 bg-almanya-gold mb-8"></div>
+                        <p class="text-gray-400 text-base mb-12 font-medium leading-relaxed">
+                            Interested in our high-yield industrial lubricants? Fill out the form or reach out directly.
+                            We supply globally with 24/7 export capabilities.
+                        </p>
+                    </div>
+                    <div class="space-y-5 font-mono text-sm">
+                        <div class="flex items-center gap-4 group">
+                            <div
+                                class="bg-white/5 border border-white/10 p-3 group-hover:border-almanya-red/50 transition-colors">
+                                <svg class="w-5 h-5 text-almanya-red" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <span
+                                class="text-gray-300 group-hover:text-white transition-colors">info@almanya-luboil.com</span>
+                        </div>
+                        <div class="flex items-center gap-4 group">
+                            <div
+                                class="bg-white/5 border border-white/10 p-3 group-hover:border-almanya-red/50 transition-colors">
+                                <svg class="w-5 h-5 text-almanya-red" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <span class="text-gray-300 group-hover:text-white transition-colors">+961 71 666 311</span>
+                        </div>
+                        <div class="flex items-center gap-4 group">
+                            <div
+                                class="bg-white/5 border border-white/10 p-3 group-hover:border-almanya-red/50 transition-colors">
+                                <svg class="w-5 h-5 text-almanya-red" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                    </path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                            </div>
+                            <span class="text-gray-300 group-hover:text-white transition-colors">Amriya Free Zone,
+                                Alexandria, Egypt</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Side -->
+                <div class="bg-white p-10 md:p-14">
+                    <div class="flex items-center gap-3 mb-8">
+                        <div class="h-8 w-1 bg-almanya-red"></div>
+                        <h3 class="font-black text-lg uppercase tracking-wider text-almanya-darkText">Send Us a Message
+                        </h3>
+                    </div>
+                    <form class="space-y-5" action="https://formsubmit.co/info@almanya-luboil.com" method="POST">
+                        <input type="hidden" name="_subject" value="New Quote Request — ALMANYA Website">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://almanya-luboil.com">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label
+                                    class="block text-xs font-bold text-almanya-grayText uppercase tracking-wider mb-2">Full
+                                    Name <span class="text-almanya-red">*</span></label>
+                                <input type="text" name="name" required placeholder="John Doe"
+                                    class="w-full border-b-2 border-almanya-border bg-transparent px-1 py-3 focus:outline-none focus:border-almanya-red transition-colors placeholder:text-gray-300 font-medium">
+                            </div>
+                            <div>
+                                <label
+                                    class="block text-xs font-bold text-almanya-grayText uppercase tracking-wider mb-2">Company
+                                    Name</label>
+                                <input type="text" name="company" placeholder="Your Company"
+                                    class="w-full border-b-2 border-almanya-border bg-transparent px-1 py-3 focus:outline-none focus:border-almanya-red transition-colors placeholder:text-gray-300 font-medium">
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label
+                                    class="block text-xs font-bold text-almanya-grayText uppercase tracking-wider mb-2">Email
+                                    Address <span class="text-almanya-red">*</span></label>
+                                <input type="email" name="email" required placeholder="email@company.com"
+                                    class="w-full border-b-2 border-almanya-border bg-transparent px-1 py-3 focus:outline-none focus:border-almanya-red transition-colors placeholder:text-gray-300 font-medium">
+                            </div>
+                            <div>
+                                <label
+                                    class="block text-xs font-bold text-almanya-grayText uppercase tracking-wider mb-2">Phone
+                                    Number</label>
+                                <input type="tel" name="phone" placeholder="+1 (555) 000-0000"
+                                    class="w-full border-b-2 border-almanya-border bg-transparent px-1 py-3 focus:outline-none focus:border-almanya-red transition-colors placeholder:text-gray-300 font-medium">
+                            </div>
+                        </div>
+                        <div>
+                            <label
+                                class="block text-xs font-bold text-almanya-grayText uppercase tracking-wider mb-2">Message
+                                <span class="text-almanya-red">*</span></label>
+                            <textarea name="message" rows="4" required
+                                placeholder="Tell us about your lubricant requirements..."
+                                class="w-full border-b-2 border-almanya-border bg-transparent px-1 py-3 focus:outline-none focus:border-almanya-red transition-colors resize-none placeholder:text-gray-300 font-medium"></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full bg-almanya-red text-white font-bold uppercase tracking-widest py-4 hover:bg-red-700 transition-all duration-300 shadow-lg hover:shadow-almanya-red/40 hover:-translate-y-0.5 mt-4 flex items-center justify-center gap-3">
+                            <span>Send Request</span>
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#18181b] text-white pt-16 pb-8 border-t-[6px] border-almanya-red">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-10 mb-16">
+
+                <!-- Col 1: Navigation -->
+                <div class="col-span-1">
+                    <h4 class="font-bold text-sm mb-5 uppercase tracking-wider text-white">Navigate</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a href="#about" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#fleet" class="hover:text-white transition-colors">Product Fleet</a></li>
+                        <li><a href="#quality-control" class="hover:text-white transition-colors">Quality Control</a>
+                        </li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Request a Quote</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 2: Quality Control -->
+                <div class="col-span-1">
+                    <h4 class="font-bold text-sm mb-5 uppercase tracking-wider text-white">Quality Standards</h4>
+                    <ul class="space-y-3 text-sm text-gray-400 font-mono">
+                        <li class="flex items-center gap-2">
+                            <div class="w-1.5 h-1.5 bg-almanya-red rounded-full flex-shrink-0"></div>
+                            ISO 9001:2015
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <div class="w-1.5 h-1.5 bg-almanya-red rounded-full flex-shrink-0"></div>
+                            API Certified
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <div class="w-1.5 h-1.5 bg-almanya-red rounded-full flex-shrink-0"></div>
+                            ACEA Standards
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <div class="w-1.5 h-1.5 bg-almanya-red rounded-full flex-shrink-0"></div>
+                            Batch Traceability
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Quick Quote Form -->
+                <div class="col-span-2 md:col-span-1">
+                    <h4 class="font-bold text-sm mb-5 uppercase tracking-wider text-white">Quick Quote</h4>
+                    <form class="space-y-3" action="https://formsubmit.co/info@almanya-luboil.com" method="POST">
+                        <input type="hidden" name="_subject" value="Quick Quote — ALMANYA Footer">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://almanya-luboil.com">
+                        <input type="text" name="name" required placeholder="Your Name"
+                            class="w-full bg-white/5 border border-white/10 px-3 py-2 text-sm placeholder:text-gray-500 focus:outline-none focus:border-almanya-red transition-colors">
+                        <input type="email" name="email" required placeholder="Email"
+                            class="w-full bg-white/5 border border-white/10 px-3 py-2 text-sm placeholder:text-gray-500 focus:outline-none focus:border-almanya-red transition-colors">
+                        <input type="tel" name="phone" placeholder="Phone"
+                            class="w-full bg-white/5 border border-white/10 px-3 py-2 text-sm placeholder:text-gray-500 focus:outline-none focus:border-almanya-red transition-colors">
+                        <button type="submit"
+                            class="w-full bg-almanya-red text-white text-xs font-bold uppercase tracking-widest py-2.5 hover:bg-red-700 transition-colors">
+                            Send
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Col 4: Contact Info -->
+                <div class="col-span-2 md:col-span-2 md:text-right mt-8 md:mt-0">
+                    <h4 class="font-bold text-sm mb-5 uppercase tracking-wider text-white md:text-right">Contact</h4>
+                    <div class="space-y-4 text-sm text-gray-400 font-mono">
+                        <div class="flex items-center md:justify-end gap-3">
+                            <svg class="w-4 h-4 text-almanya-red flex-shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            <a href="mailto:info@almanya-luboil.com"
+                                class="hover:text-white transition-colors">info@almanya-luboil.com</a>
+                        </div>
+                        <div class="flex items-center md:justify-end gap-3">
+                            <svg class="w-4 h-4 text-almanya-red flex-shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                                </path>
+                            </svg>
+                            <a href="tel:+96171666311" class="hover:text-white transition-colors">+961 71 666 311</a>
+                        </div>
+                        <div class="flex items-center md:justify-end gap-3">
+                            <svg class="w-4 h-4 text-almanya-red flex-shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                </path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <span>Amriya Free Zone, Alexandria, Egypt</span>
+                        </div>
+                    </div>
+
+                    <!-- Social & Logo -->
+                    <div class="flex md:justify-end gap-3 mt-8 mb-4">
+                        <a href="https://www.facebook.com/p/Almanya-Lubricants-Factory-100063694074692/" target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-white hover:text-almanya-red transition-colors bg-white/10 p-2 rounded-full">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+                            </svg>
+                        </a>
+                        <a href="https://wa.me/96171666311" target="_blank" rel="noopener noreferrer"
+                            class="text-white hover:text-almanya-red transition-colors bg-white/10 p-2 rounded-full">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.888-4.439 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                            </svg>
+                        </a>
+                    </div>
+                    <img src="assets/logo.png" alt="ALMANYA Logo"
+                        class="h-10 w-auto md:ml-auto filter brightness-0 invert opacity-80">
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="text-xs text-gray-500 font-mono">&copy; 2025 ALMANYA Lubricants Factory. All rights
+                    reserved.</div>
+                <div class="flex items-center gap-6">
+                    <button
+                        class="border border-white/20 px-4 py-1.5 flex items-center gap-2 hover:bg-white/10 transition-colors text-xs font-bold tracking-widest text-gray-400 hover:text-white">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                            </path>
+                        </svg>
+                        ENGLISH
+                    </button>
+                    <div class="text-xs text-gray-500 hover:text-white cursor-pointer transition-colors">
+                        Privacy Policy
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-6">
+                <span class="text-[10px] text-gray-600 tracking-wider uppercase">Powered by <span
+                        class="text-gray-500">QUANTEX AI SOLUTIONS</span></span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smart Navbar: hide on scroll down, show on scroll up
+        const navbar = document.getElementById('navbar');
+        let lastScrollY = 0;
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            if (currentScrollY > lastScrollY && currentScrollY > 80) {
+                // Scrolling down — hide navbar
+                navbar.style.transform = 'translateY(-100%)';
+            } else {
+                // Scrolling up or at top — show navbar
+                navbar.style.transform = 'translateY(0)';
+            }
+            if (currentScrollY > 50) {
+                navbar.classList.add('shadow-lg', 'shadow-almanya-red/5');
+            } else {
+                navbar.classList.remove('shadow-lg', 'shadow-almanya-red/5');
+            }
+            lastScrollY = currentScrollY;
+        });
+        // Mobile Menu Logic
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const closeBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('translate-x-full');
+            document.body.classList.toggle('overflow-hidden');
+        }
+
+        if (mobileBtn && closeBtn && mobileMenu) {
+            mobileBtn.addEventListener('click', toggleMenu);
+            closeBtn.addEventListener('click', toggleMenu);
+            mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
+        }
+
+        // Scroll Animation Logic
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+        // Product Modal Logic
+        const modal = document.getElementById('product-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalImg = document.getElementById('modal-img');
+        const modalDesc = document.getElementById('modal-desc');
+        const modalInner = document.getElementById('modal-inner');
+
+        function openProductModal(title, imgSrc, desc) {
+            modalTitle.innerText = title;
+            modalImg.src = imgSrc;
+            modalDesc.innerText = desc;
+            modal.classList.remove('hidden');
+            // Small delay to allow display block to apply before animating opacity/transform
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modalInner.classList.remove('scale-95', 'opacity-0');
+            }, 10);
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function closeProductModal() {
+            modal.classList.add('opacity-0');
+            modalInner.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
+            }, 300);
+        }
+        // Preloader Logic
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            // Wait an extra second for effect
+            setTimeout(() => {
+                preloader.classList.add('opacity-0');
+                document.body.classList.remove('overflow-hidden');
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 1000);
+            }, 1200);
+        });
+
+        // Scroll to Top Logic (deferred until DOM is fully parsed)
+        document.addEventListener('DOMContentLoaded', () => {
+            const scrollTopBtn = document.getElementById('scroll-top-btn');
+            if (!scrollTopBtn) return;
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 600) {
+                    scrollTopBtn.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
+                } else {
+                    scrollTopBtn.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
+                }
+            });
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Counter Animation
+        function animateCounter(el) {
+            const target = parseInt(el.getAttribute('data-target'));
+            const duration = 1500;
+            const start = performance.now();
+            function update(now) {
+                const elapsed = now - start;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                el.textContent = Math.floor(eased * target);
+                if (progress < 1) requestAnimationFrame(update);
+                else el.textContent = target;
+            }
+            requestAnimationFrame(update);
+        }
+
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.querySelectorAll('.counter').forEach(c => animateCounter(c));
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const statsBar = document.getElementById('stats-bar');
+        if (statsBar) statsObserver.observe(statsBar);
+    </script>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/96171666311" target="_blank" rel="noopener noreferrer"
+        class="fixed bottom-8 left-8 z-40 bg-[#25D366] text-white p-3.5 rounded-full shadow-xl transition-all duration-300 hover:scale-110 hover:shadow-[#25D366]/40 focus:outline-none animate-pulse hover:animate-none">
+        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+            <path
+                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.888-4.439 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+        </svg>
+    </a>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-top-btn" onclick="scrollToTop()"
+        class="fixed bottom-8 right-8 z-40 bg-almanya-red text-white p-3 shadow-xl opacity-0 translate-y-10 pointer-events-none transition-all duration-300 hover:bg-red-700 hover:-translate-y-1 focus:outline-none border-2 border-transparent hover:border-white/30">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
+
+    <!-- Product Modal UI -->
+    <div id="product-modal"
+        class="fixed inset-0 z-[60] hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-almanya-darkText/80 backdrop-blur-sm" onclick="closeProductModal()"></div>
+        <div id="modal-inner"
+            class="relative bg-white w-full max-w-5xl shadow-2xl border-t-[6px] border-almanya-red flex flex-col md:flex-row transform scale-95 opacity-0 transition-all duration-300 max-h-[90vh] overflow-hidden">
+            <button onclick="closeProductModal()"
+                class="absolute top-4 right-4 text-almanya-grayText hover:text-almanya-red z-10 focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </button>
+            <div
+                class="w-full md:w-1/2 bg-almanya-light p-8 flex items-center justify-center border-b md:border-b-0 md:border-r border-almanya-border h-64 md:h-auto">
+                <img id="modal-img" src="" alt="Product" class="w-full h-full object-contain mix-blend-multiply">
+            </div>
+            <div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center overflow-y-auto">
+                <h3 id="modal-title" class="text-2xl md:text-3xl font-black text-almanya-darkText uppercase mb-4">
+                    Product Name</h3>
+                <div class="h-1 w-12 bg-almanya-gold mb-6"></div>
+                <p id="modal-desc" class="text-almanya-grayText font-medium mb-10 leading-relaxed text-lg">
+                    Product description will appear here.
+                </p>
+                <div class="mt-auto">
+                    <button onclick="closeProductModal()"
+                        class="w-full border-2 border-almanya-darkText text-almanya-darkText font-bold uppercase tracking-widest py-4 hover:bg-almanya-darkText hover:text-white transition-colors">
+                        Download Technical Data (TDS)
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+    @keyframes progress {
+        0% {
+            transform: translateX(-100%);
+        }
+
+        100% {
+            transform: translateX(0);
+        }
+    }
+</style>
+
+</html>
