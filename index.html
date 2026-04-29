@@ -128,7 +128,7 @@
 
         <!-- Mobile Menu Overlay -->
         <div id="mobile-menu"
-            class="fixed inset-0 bg-white z-40 transform translate-x-full transition-transform duration-300 md:hidden flex flex-col pt-24 px-6">
+            class="fixed inset-0 bg-white z-[55] transform translate-x-full transition-transform duration-300 md:hidden flex flex-col pt-24 px-6">
             <button id="close-menu-btn"
                 class="absolute top-6 right-6 text-almanya-darkText hover:text-almanya-red focus:outline-none">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -142,18 +142,19 @@
                 <a href="https://wa.me/96171666311" target="_blank" rel="noopener noreferrer"
                     class="mobile-link text-almanya-red">Contact Us</a>
             </div>
+        </div>
     </nav>
 
     <header
-        class="relative md:h-screen flex flex-col items-start md:items-center justify-start md:justify-center overflow-hidden bg-white md:bg-transparent pt-28 pb-16 md:pt-0 md:pb-0">
+        class="relative h-screen flex flex-col items-start md:items-center justify-center overflow-hidden bg-[#18181b]">
         <div class="absolute inset-0 w-full h-full z-0 bg-[#18181b]">
             <video id="hero-video" autoplay loop muted playsinline preload="none" class="w-full h-full object-cover">
             </video>
             <div class="absolute inset-0 bg-white/5"></div>
         </div>
 
-        <div class="relative z-10 w-full max-w-7xl mx-auto px-6 md:pt-32 flex items-start">
-            <div class="max-w-[90vw] sm:max-w-md md:max-w-xl liquid-glass p-4 sm:p-5 md:p-8 rounded-2xl">
+        <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 pt-20 md:pt-32 flex items-start">
+            <div class="max-w-[92vw] sm:max-w-md md:max-w-xl liquid-glass p-4 sm:p-5 md:p-8 rounded-2xl">
                 <p
                     class="font-mono text-almanya-red font-bold text-[10px] md:text-sm mb-2 md:mb-3 tracking-widest uppercase">
                     Amriya Free Zone, Egypt</p>
@@ -183,9 +184,9 @@
         </div>
     </header>
 
-    <section id="fleet" class="py-20 bg-white border-y border-almanya-border">
+    <section id="fleet" class="py-10 md:py-20 bg-white border-y border-almanya-border">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
+            <div class="text-center mb-8 md:mb-16">
                 <h2 class="text-3xl md:text-4xl font-black text-almanya-darkText uppercase">Our Product Fleet</h2>
                 <div class="h-1 w-20 bg-almanya-gold mx-auto mt-4"></div>
             </div>
@@ -193,61 +194,61 @@
             <div
                 class="flex flex-wrap justify-center gap-6 reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
                 <div onclick="openProductModal('Gasoline Engine Oils', 'assets/Gasoline.webp', 'Formulated for modern gasoline engines to provide superior protection against wear, deposits, and sludge buildup. Meets latest API standards.')"
-                    class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-almanya-light border border-almanya-border p-8 hover:-translate-y-2 hover:shadow-xl hover:border-almanya-red/30 transition-all duration-300 group cursor-pointer flex flex-col">
+                    class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-almanya-light border border-almanya-border p-4 sm:p-6 md:p-8 hover:-translate-y-2 hover:shadow-xl hover:border-almanya-red/30 transition-all duration-300 group cursor-pointer flex flex-col">
                     <div
                         class="text-almanya-gold text-4xl mb-4 font-black opacity-30 group-hover:opacity-100 transition-opacity font-mono">
                         01</div>
                     <h3 class="text-xl font-bold text-almanya-darkText uppercase tracking-wide mb-8 flex-grow">Gasoline
                         Engine Oils</h3>
-                    <div class="relative h-48 w-full mt-auto">
+                    <div class="relative h-32 sm:h-40 md:h-48 w-full mt-auto">
                         <img src="assets/Gasoline.webp" alt="Gasoline Showcase" loading="lazy"
                             class="absolute inset-0 w-full h-full object-contain mix-blend-multiply opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
                     </div>
                 </div>
                 <div onclick="openProductModal('Diesel Engine Oils', 'assets/Diesel.webp', 'Heavy-duty diesel engine oils engineered for extreme performance under high loads. Ensures excellent thermal stability and long drain intervals.')"
-                    class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-almanya-light border border-almanya-border p-8 hover:-translate-y-2 hover:shadow-xl hover:border-almanya-red/30 transition-all duration-300 group cursor-pointer flex flex-col">
+                    class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-almanya-light border border-almanya-border p-4 sm:p-6 md:p-8 hover:-translate-y-2 hover:shadow-xl hover:border-almanya-red/30 transition-all duration-300 group cursor-pointer flex flex-col">
                     <div
                         class="text-almanya-gold text-4xl mb-4 font-black opacity-30 group-hover:opacity-100 transition-opacity font-mono">
                         02</div>
                     <h3 class="text-xl font-bold text-almanya-darkText uppercase tracking-wide mb-8 flex-grow">Diesel
                         Engine Oils</h3>
-                    <div class="relative h-48 w-full mt-auto">
+                    <div class="relative h-32 sm:h-40 md:h-48 w-full mt-auto">
                         <img src="assets/Diesel.webp" alt="Diesel Showcase" loading="lazy"
                             class="absolute inset-0 w-full h-full object-contain mix-blend-multiply opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
                     </div>
                 </div>
                 <div onclick="openProductModal('Marine Lubricants', 'assets/marine.webp', 'Specialized marine grade lubricants designed to protect marine engines against corrosion, rust, and extreme maritime operating conditions.')"
-                    class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-almanya-light border border-almanya-border p-8 hover:-translate-y-2 hover:shadow-xl hover:border-almanya-red/30 transition-all duration-300 group cursor-pointer flex flex-col">
+                    class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-almanya-light border border-almanya-border p-4 sm:p-6 md:p-8 hover:-translate-y-2 hover:shadow-xl hover:border-almanya-red/30 transition-all duration-300 group cursor-pointer flex flex-col">
                     <div
                         class="text-almanya-gold text-4xl mb-4 font-black opacity-30 group-hover:opacity-100 transition-opacity font-mono">
                         03</div>
                     <h3 class="text-xl font-bold text-almanya-darkText uppercase tracking-wide mb-8 flex-grow">Marine
                         Lubricants</h3>
-                    <div class="relative h-48 w-full mt-auto">
+                    <div class="relative h-32 sm:h-40 md:h-48 w-full mt-auto">
                         <img src="assets/marine.webp" alt="Marine Showcase" loading="lazy"
                             class="absolute inset-0 w-full h-full object-contain mix-blend-multiply opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
                     </div>
                 </div>
                 <div onclick="openProductModal('Industrial & Hydraulic Oils', 'assets/Industrial.webp', 'High-viscosity index hydraulic fluids engineered for minimal wear and consistent performance in industrial machinery systems.')"
-                    class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-almanya-light border border-almanya-border p-8 hover:-translate-y-2 hover:shadow-xl hover:border-almanya-red/30 transition-all duration-300 group cursor-pointer flex flex-col">
+                    class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-almanya-light border border-almanya-border p-4 sm:p-6 md:p-8 hover:-translate-y-2 hover:shadow-xl hover:border-almanya-red/30 transition-all duration-300 group cursor-pointer flex flex-col">
                     <div
                         class="text-almanya-gold text-4xl mb-4 font-black opacity-30 group-hover:opacity-100 transition-opacity font-mono">
                         04</div>
                     <h3 class="text-xl font-bold text-almanya-darkText uppercase tracking-wide mb-8 flex-grow">
                         Industrial & Hydraulic Oils</h3>
-                    <div class="relative h-48 w-full mt-auto">
+                    <div class="relative h-32 sm:h-40 md:h-48 w-full mt-auto">
                         <img src="assets/Industrial.webp" alt="Industrial Showcase" loading="lazy"
                             class="absolute inset-0 w-full h-full object-contain mix-blend-multiply opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
                     </div>
                 </div>
                 <div onclick="openProductModal('Gear & Turbine Oils', 'assets/Gear.webp', 'Premium gear oils providing excellent load carrying capacity and protection against shock loading for industrial gearboxes and turbines.')"
-                    class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-almanya-light border border-almanya-border p-8 hover:-translate-y-2 hover:shadow-xl hover:border-almanya-red/30 transition-all duration-300 group cursor-pointer flex flex-col">
+                    class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-almanya-light border border-almanya-border p-4 sm:p-6 md:p-8 hover:-translate-y-2 hover:shadow-xl hover:border-almanya-red/30 transition-all duration-300 group cursor-pointer flex flex-col">
                     <div
                         class="text-almanya-gold text-4xl mb-4 font-black opacity-30 group-hover:opacity-100 transition-opacity font-mono">
                         05</div>
                     <h3 class="text-xl font-bold text-almanya-darkText uppercase tracking-wide mb-8 flex-grow">Gear &
                         Turbine Oils</h3>
-                    <div class="relative h-48 w-full mt-auto">
+                    <div class="relative h-32 sm:h-40 md:h-48 w-full mt-auto">
                         <img src="assets/Gear.webp" alt="Gear Showcase" loading="lazy"
                             class="absolute inset-0 w-full h-full object-contain mix-blend-multiply opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
                     </div>
@@ -284,10 +285,10 @@
         </div>
     </section>
 
-    <section id="quality-control" class="py-20 bg-white border-y border-almanya-border">
+    <section id="quality-control" class="py-10 md:py-20 bg-white border-y border-almanya-border">
         <div class="max-w-6xl mx-auto px-6">
             <div
-                class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
+                class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-center reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
                 <div class="relative h-64 md:h-96 w-full border border-almanya-border shadow-md">
                     <img src="assets/QC.webp" alt="Quality Control Process" loading="lazy"
                         class="absolute inset-0 w-full h-full object-cover">
@@ -296,7 +297,7 @@
                     <h2 class="text-3xl md:text-4xl font-black mb-8 text-almanya-darkText uppercase">Quality <span
                             class="text-almanya-gold">Control</span>
                     </h2>
-                    <div class="text-almanya-grayText text-lg md:text-xl space-y-6 font-medium leading-relaxed">
+                    <div class="text-almanya-grayText text-base md:text-xl space-y-4 md:space-y-6 font-medium leading-relaxed">
                         <p>
                             ALF’s commitment to quality is further validated by its adherence to ISO 9001:2015
                             standards, ensuring that every lubricant from synthetic engine oils to industrial grease
@@ -310,12 +311,12 @@
         </div>
     </section>
 
-    <section id="about" class="py-20 bg-almanya-light border-y border-almanya-border">
+    <section id="about" class="py-10 md:py-20 bg-almanya-light border-y border-almanya-border">
         <div class="max-w-5xl mx-auto px-6 text-center">
             <h2 class="text-3xl md:text-4xl font-black mb-8 text-almanya-darkText uppercase">About <span
                     class="text-almanya-gold">ALF</span></h2>
 
-            <div class="w-full h-64 md:h-80 mb-10 border border-almanya-border bg-gray-200 shadow-md">
+            <div class="w-full h-48 md:h-80 mb-6 md:mb-10 border border-almanya-border bg-gray-200 shadow-md">
                 <iframe
                     src="https://maps.google.com/maps?q=31.034748077392578,29.77499008178711&hl=ar&z=11&output=embed"
                     width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
@@ -335,13 +336,13 @@
         </div>
     </section>
 
-    <section id="contact" class="py-20 bg-almanya-light border-y border-almanya-border">
+    <section id="contact" class="py-10 md:py-20 bg-almanya-light border-y border-almanya-border">
         <div
             class="max-w-7xl mx-auto px-6 reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 shadow-2xl overflow-hidden border border-almanya-border">
                 <!-- Info Side — Dark Industrial Panel -->
                 <div
-                    class="bg-[#18181b] text-white p-10 md:p-14 flex flex-col justify-between relative overflow-hidden">
+                    class="bg-[#18181b] text-white p-6 sm:p-10 md:p-14 flex flex-col justify-between relative overflow-hidden">
                     <div class="absolute top-0 left-0 w-2 h-full bg-almanya-red"></div>
                     <div>
                         <p class="font-mono text-almanya-red font-bold text-xs tracking-widest uppercase mb-4">Get In
@@ -398,7 +399,7 @@
                 </div>
 
                 <!-- Form Side -->
-                <div class="bg-white p-10 md:p-14">
+                <div class="bg-white p-6 sm:p-10 md:p-14">
                     <div class="flex items-center gap-3 mb-8">
                         <div class="h-8 w-1 bg-almanya-red"></div>
                         <h3 class="font-black text-lg uppercase tracking-wider text-almanya-darkText">Send Us a Message
@@ -464,7 +465,7 @@
 
     <footer class="bg-[#18181b] text-white pt-16 pb-8 border-t-[6px] border-almanya-red">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-2 md:grid-cols-5 gap-10 mb-16">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8 sm:gap-10 mb-10 md:mb-16">
 
                 <!-- Col 1: Navigation -->
                 <div class="col-span-1">
