@@ -102,45 +102,17 @@
     </div>
 
     <nav class="fixed w-full z-50 top-0 liquid-glass border-b border-white/20 transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 md:px-6 h-20 md:h-28 flex items-center justify-between">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 md:h-28 flex items-center justify-between">
             <a href="#" class="flex-shrink-0">
-                <img src="assets/logo.png" alt="ALMANYA Logo" class="h-16 md:h-24 w-auto object-contain">
+                <img src="assets/logo.png" alt="ALMANYA Logo" class="h-10 md:h-24 w-auto object-contain">
             </a>
 
-            <!-- Desktop Menu -->
-            <div class="hidden md:flex space-x-8 items-center text-sm font-bold tracking-wider text-almanya-darkText">
-                <a href="#about" class="hover:text-almanya-red transition-colors uppercase">About Us</a>
-                <a href="#fleet" class="hover:text-almanya-red transition-colors uppercase">Our Fleet</a>
+            <!-- Always Visible Menu -->
+            <div class="flex space-x-3 sm:space-x-6 md:space-x-8 items-center text-[10px] sm:text-xs md:text-sm font-bold tracking-wider text-almanya-darkText">
+                <a href="#about" class="hover:text-almanya-red transition-colors uppercase">About</a>
+                <a href="#fleet" class="hover:text-almanya-red transition-colors uppercase">Fleet</a>
                 <a href="https://wa.me/96171666311" target="_blank" rel="noopener noreferrer"
-                    class="px-5 py-2 border border-almanya-red text-almanya-red hover:bg-almanya-red hover:text-white transition-all uppercase">Contact
-                    Us</a>
-            </div>
-
-            <!-- Mobile Hamburger Button -->
-            <button id="mobile-menu-btn"
-                class="md:hidden text-almanya-darkText hover:text-almanya-red focus:outline-none">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
-                    </path>
-                </svg>
-            </button>
-        </div>
-
-        <!-- Mobile Menu Overlay -->
-        <div id="mobile-menu"
-            class="fixed inset-0 bg-white z-[55] transform translate-x-full transition-transform duration-300 md:hidden flex flex-col pt-24 px-6">
-            <button id="close-menu-btn"
-                class="absolute top-6 right-6 text-almanya-darkText hover:text-almanya-red focus:outline-none">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
-                    </path>
-                </svg>
-            </button>
-            <div class="flex flex-col space-y-8 text-xl font-black uppercase text-almanya-darkText tracking-wider">
-                <a href="#about" class="mobile-link hover:text-almanya-red transition-colors">About Us</a>
-                <a href="#fleet" class="mobile-link hover:text-almanya-red transition-colors">Our Fleet</a>
-                <a href="https://wa.me/96171666311" target="_blank" rel="noopener noreferrer"
-                    class="mobile-link text-almanya-red">Contact Us</a>
+                    class="px-3 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2 border border-almanya-red text-almanya-red hover:bg-almanya-red hover:text-white transition-all uppercase">Contact</a>
             </div>
         </div>
     </nav>
