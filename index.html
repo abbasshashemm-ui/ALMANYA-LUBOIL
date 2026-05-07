@@ -757,6 +757,28 @@
         // Fallback: forcefully hide preloader after 3 seconds max
         setTimeout(hidePreloader, 3000);
 
+        // Mobile Video Autoplay/Loop Fixes
+        document.addEventListener('DOMContentLoaded', () => {
+            const videos = document.querySelectorAll('video');
+            videos.forEach(video => {
+                // Force muted properties which iOS requires for autoplay
+                video.muted = true;
+                video.defaultMuted = true;
+                video.setAttribute('playsinline', '');
+                
+                // Explicitly attempt play
+                const playPromise = video.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(error => console.log("Video autoplay blocked by browser:", error));
+                }
+
+                // Force loop if native loop attribute fails
+                video.addEventListener('ended', () => {
+                    video.play();
+                });
+            });
+        });
+
         // Scroll to Top Logic (deferred until DOM is fully parsed)
         document.addEventListener('DOMContentLoaded', () => {
             const scrollTopBtn = document.getElementById('scroll-top-btn');
