@@ -728,10 +728,14 @@
                 document.body.classList.remove('overflow-hidden');
             }, 300);
         }
-        // Preloader Logic + Lazy Video Load
-        window.addEventListener('load', () => {
+        // Preloader Logic with Fallback for slow mobile connections
+        let preloaderRemoved = false;
+        const hidePreloader = () => {
+            if (preloaderRemoved) return;
+            preloaderRemoved = true;
             const preloader = document.getElementById('preloader');
-            // Wait an extra second for effect
+            if (!preloader) return;
+            // Wait a small amount for effect
             setTimeout(() => {
                 preloader.classList.add('opacity-0');
                 document.body.classList.remove('overflow-hidden');
@@ -746,8 +750,12 @@
                 setTimeout(() => {
                     preloader.style.display = 'none';
                 }, 1000);
-            }, 1200);
-        });
+            }, 500);
+        };
+
+        window.addEventListener('load', hidePreloader);
+        // Fallback: forcefully hide preloader after 3 seconds max
+        setTimeout(hidePreloader, 3000);
 
         // Scroll to Top Logic (deferred until DOM is fully parsed)
         document.addEventListener('DOMContentLoaded', () => {
