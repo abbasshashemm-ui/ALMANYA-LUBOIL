@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth js-loading">
 
 <head>
     <meta charset="UTF-8">
@@ -22,17 +22,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
     <link rel="preload" href="assets/logo.png" as="image" type="image/png">
-    <link rel="preload" as="style"
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"
-        onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap">
-    </noscript>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap">
 
-    <script defer src="https://cdn.tailwindcss.com"></script>
-    <script defer>
-        document.addEventListener('DOMContentLoaded', () => {
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
         tailwind.config = {
             theme: {
                 extend: {
@@ -54,10 +48,31 @@
                 }
             }
         };
-        });
     </script>
 
     <style>
+        html.js-loading body > *:not(#preloader) {
+            visibility: hidden;
+        }
+
+        #preloader {
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+        }
+
+        body {
+            margin: 0;
+            background: #f4f4f5;
+            color: #18181b;
+            font-family: Inter, system-ui, sans-serif;
+        }
+
         /* Hide scrollbar for technical dashboard feel */
         ::-webkit-scrollbar {
             width: 8px;
@@ -339,9 +354,9 @@
         <div class="max-w-6xl mx-auto px-6">
             <div
                 class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-center reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
-                <div class="relative h-64 md:h-96 w-full border border-almanya-border shadow-md overflow-hidden">
-                    <img src="assets/QC.webp" alt="ALMANYA quality control facility" loading="lazy"
-                        decoding="async" class="absolute inset-0 w-full h-full object-cover">
+                <div class="relative h-64 md:h-96 w-full border border-almanya-border shadow-md overflow-hidden bg-[#18181b]">
+                    <video data-src="assets/factory.webm?v=7" preload="none" autoplay loop muted playsinline
+                        class="lazy-video absolute inset-0 w-full h-full object-cover"></video>
                 </div>
                 <div class="text-left">
                     <h2 class="text-3xl md:text-4xl font-black mb-8 text-almanya-darkText uppercase">Quality <span
@@ -954,6 +969,15 @@
                 document.body.classList.remove('overflow-hidden');
             }, 300);
         }
+        function revealPage() {
+            document.documentElement.classList.remove('js-loading');
+        }
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => requestAnimationFrame(revealPage));
+        } else {
+            requestAnimationFrame(revealPage);
+        }
+
         // Preloader Logic with Fallback for slow mobile connections
         function shouldLoadHeavyMedia() {
             const conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
@@ -996,6 +1020,7 @@
         };
 
         if (sessionStorage.getItem('alf-visited')) {
+            revealPage();
             const preloader = document.getElementById('preloader');
             if (preloader) preloader.style.display = 'none';
             document.body.classList.remove('overflow-hidden');

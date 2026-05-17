@@ -25,4 +25,5 @@ function Compress-Video($name, $maxWidth, $targetKbps) {
 
 Compress-Video 'main.webm' 1280 900
 Compress-Video 'truck.webm' 1280 600
+Compress-Video 'factory.webm' 1280 600
 Write-Host 'Done.'
