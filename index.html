@@ -23,15 +23,16 @@
     <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
     <link rel="preload" href="assets/logo.png" as="image" type="image/png">
     <link rel="preload" as="style"
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Roboto+Mono:wght@400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"
         onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
         <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Roboto+Mono:wght@400;700&display=swap">
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap">
     </noscript>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
+    <script defer src="https://cdn.tailwindcss.com"></script>
+    <script defer>
+        document.addEventListener('DOMContentLoaded', () => {
         tailwind.config = {
             theme: {
                 extend: {
@@ -47,12 +48,13 @@
                         }
                     },
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        mono: ['Roboto Mono', 'monospace'],
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Consolas', 'monospace'],
                     }
                 }
             }
-        }
+        };
+        });
     </script>
 
     <style>
@@ -148,6 +150,15 @@
             right: 8px;
             border-width: 0 2px 2px 0;
         }
+
+        .section-defer {
+            content-visibility: auto;
+            contain-intrinsic-size: auto 600px;
+        }
+
+        .img-placeholder {
+            background: linear-gradient(135deg, #27272a 0%, #18181b 100%);
+        }
     </style>
 </head>
 
@@ -186,10 +197,9 @@
     <header
         class="relative h-screen flex flex-col items-start md:items-center justify-center overflow-hidden bg-[#18181b]">
         <div class="absolute inset-0 w-full h-full z-0 bg-[#18181b]">
-            <video id="hero-video" autoplay loop muted playsinline preload="metadata"
-                class="w-full h-full object-cover">
-                <source src="assets/main.webm?v=5" type="video/webm">
-            </video>
+            <video id="hero-video" autoplay loop muted playsinline preload="none"
+                poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3C/svg%3E"
+                class="w-full h-full object-cover bg-[#18181b]"></video>
             <div class="absolute inset-0 bg-white/5"></div>
         </div>
 
@@ -224,7 +234,7 @@
         </div>
     </header>
 
-    <section id="fleet" class="py-10 md:py-20 bg-white border-y border-almanya-border">
+    <section id="fleet" class="section-defer py-10 md:py-20 bg-white border-y border-almanya-border">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-8 md:mb-16">
                 <h2 class="text-3xl md:text-4xl font-black text-almanya-darkText uppercase">Our Product line</h2>
@@ -329,9 +339,9 @@
         <div class="max-w-6xl mx-auto px-6">
             <div
                 class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-center reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
-                <div class="relative h-64 md:h-96 w-full border border-almanya-border shadow-md">
-                    <video data-src="assets/factory.webm" preload="none" autoplay loop muted playsinline
-                        class="lazy-video absolute inset-0 w-full h-full object-cover"></video>
+                <div class="relative h-64 md:h-96 w-full border border-almanya-border shadow-md overflow-hidden">
+                    <img src="assets/QC.webp" alt="ALMANYA quality control facility" loading="lazy"
+                        decoding="async" class="absolute inset-0 w-full h-full object-cover">
                 </div>
                 <div class="text-left">
                     <h2 class="text-3xl md:text-4xl font-black mb-8 text-almanya-darkText uppercase">Quality <span
@@ -352,7 +362,7 @@
         </div>
     </section>
 
-    <section id="certificates" class="py-12 md:py-24 bg-[#18181b] border-y border-white/10 relative overflow-hidden">
+    <section id="certificates" class="section-defer py-12 md:py-24 bg-[#18181b] border-y border-white/10 relative overflow-hidden">
         <div class="absolute inset-0 opacity-[0.03] pointer-events-none"
             style="background-image: radial-gradient(circle at 20% 50%, #d4af37 0%, transparent 50%), radial-gradient(circle at 80% 50%, #cc0000 0%, transparent 50%);">
         </div>
@@ -373,9 +383,9 @@
                 <article class="cert-card rounded-sm overflow-hidden flex flex-col cursor-pointer group"
                     onclick="openCertModal('ISO 9001:2015', 'Quality Management System', 'assets/certificates/iso-9001.webp', 'Recognizes our commitment to consistent quality in manufacturing crude oils for engines and industrial applications — meeting rigorous international standards for customer satisfaction and continuous improvement.', 'Feb 2027')">
                     <div class="cert-frame relative mx-5 mt-5 mb-4 p-3 aspect-[3/4] overflow-hidden">
-                        <img src="assets/certificates/iso-9001.webp" alt="ISO 9001:2015 Certificate"
+                        <img data-src="assets/certificates/iso-9001.webp" alt="ISO 9001:2015 Certificate"
                             loading="lazy" decoding="async" fetchpriority="low"
-                            class="w-full h-full object-contain object-top transition-transform duration-500 group-hover:scale-[1.03]">
+                            class="lazy-img img-placeholder w-full h-full object-contain object-top transition-transform duration-500 group-hover:scale-[1.03]">
                         <div class="absolute inset-0 bg-gradient-to-t from-[#18181b]/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-4">
                             <span class="text-white text-xs font-bold uppercase tracking-widest bg-almanya-red/90 px-4 py-2">View Certificate</span>
                         </div>
@@ -397,9 +407,9 @@
                 <article class="cert-card rounded-sm overflow-hidden flex flex-col cursor-pointer group"
                     onclick="openCertModal('ISO 14001:2015', 'Environmental Management System', 'assets/certificates/iso-14001.webp', 'Confirms rigorous environmental management across our manufacturing operations — minimizing impact while maintaining excellence in crude oil production for engine and industrial use.', 'May 2029')">
                     <div class="cert-frame relative mx-5 mt-5 mb-4 p-3 aspect-[3/4] overflow-hidden">
-                        <img src="assets/certificates/iso-14001.webp" alt="ISO 14001:2015 Certificate"
+                        <img data-src="assets/certificates/iso-14001.webp" alt="ISO 14001:2015 Certificate"
                             loading="lazy" decoding="async" fetchpriority="low"
-                            class="w-full h-full object-contain object-top transition-transform duration-500 group-hover:scale-[1.03]">
+                            class="lazy-img img-placeholder w-full h-full object-contain object-top transition-transform duration-500 group-hover:scale-[1.03]">
                         <div class="absolute inset-0 bg-gradient-to-t from-[#18181b]/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-4">
                             <span class="text-white text-xs font-bold uppercase tracking-widest bg-almanya-red/90 px-4 py-2">View Certificate</span>
                         </div>
@@ -421,9 +431,9 @@
                 <article class="cert-card rounded-sm overflow-hidden flex flex-col cursor-pointer group"
                     onclick="openCertModal('ISO 45001:2018', 'Occupational Health &amp; Safety', 'assets/certificates/iso-45001.webp', 'Validates our occupational health and safety management system — protecting our workforce while manufacturing crude oils for engines and industrial purposes to international standards.', 'May 2029')">
                     <div class="cert-frame relative mx-5 mt-5 mb-4 p-3 aspect-[3/4] overflow-hidden">
-                        <img src="assets/certificates/iso-45001.webp" alt="ISO 45001:2018 Certificate"
+                        <img data-src="assets/certificates/iso-45001.webp" alt="ISO 45001:2018 Certificate"
                             loading="lazy" decoding="async" fetchpriority="low"
-                            class="w-full h-full object-contain object-top transition-transform duration-500 group-hover:scale-[1.03]">
+                            class="lazy-img img-placeholder w-full h-full object-contain object-top transition-transform duration-500 group-hover:scale-[1.03]">
                         <div class="absolute inset-0 bg-gradient-to-t from-[#18181b]/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-4">
                             <span class="text-white text-xs font-bold uppercase tracking-widest bg-almanya-red/90 px-4 py-2">View Certificate</span>
                         </div>
@@ -445,9 +455,9 @@
                 <article class="cert-card cert-card-certind rounded-sm overflow-hidden flex flex-col cursor-pointer group"
                     onclick="openCertModal('CERT IND Middle East', 'Official Certification Body', 'assets/certificates/certino-audit.webp', 'Official bilingual certificate issued by CERT IND Middle East for ISO 14001:2015 — confirming our environmental management system for the manufacture of crude oils for engines and industrial purposes. Accredited by EGAC and recognized under the IAF multilateral arrangement.', 'May 2027')">
                     <div class="cert-frame relative mx-5 mt-5 mb-4 p-3 aspect-[3/4] overflow-hidden">
-                        <img src="assets/certificates/certino-audit.webp" alt="CERT IND Middle East Certificate"
+                        <img data-src="assets/certificates/certino-audit.webp" alt="CERT IND Middle East Certificate"
                             loading="lazy" decoding="async" fetchpriority="low"
-                            class="w-full h-full object-contain object-top transition-transform duration-500 group-hover:scale-[1.03]">
+                            class="lazy-img img-placeholder w-full h-full object-contain object-top transition-transform duration-500 group-hover:scale-[1.03]">
                         <div class="absolute inset-0 bg-gradient-to-t from-[#18181b]/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-4">
                             <span class="text-white text-xs font-bold uppercase tracking-widest bg-orange-600/90 px-4 py-2">View Certificate</span>
                         </div>
@@ -475,7 +485,7 @@
         </div>
     </section>
 
-    <section id="transportation" class="py-10 md:py-20 bg-almanya-light border-y border-almanya-border">
+    <section id="transportation" class="section-defer py-10 md:py-20 bg-almanya-light border-y border-almanya-border">
         <div class="max-w-6xl mx-auto px-6">
             <div
                 class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-center reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
@@ -502,17 +512,17 @@
         </div>
     </section>
 
-    <section id="about" class="py-10 md:py-20 bg-white border-y border-almanya-border">
+    <section id="about" class="section-defer py-10 md:py-20 bg-white border-y border-almanya-border">
         <div class="max-w-5xl mx-auto px-6 text-center">
             <h2 class="text-3xl md:text-4xl font-black mb-8 text-almanya-darkText uppercase">About <span
                     class="text-almanya-gold">ALF</span></h2>
 
             <div class="w-full h-48 md:h-80 mb-6 md:mb-10 border border-almanya-border bg-gray-200 shadow-md">
                 <iframe
-                    src="https://maps.google.com/maps?q=31.034748077392578,29.77499008178711&hl=ar&z=11&output=embed"
+                    data-src="https://maps.google.com/maps?q=31.034748077392578,29.77499008178711&hl=ar&z=11&output=embed"
                     width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
-                    tabindex="0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-                    class="grayscale hover:grayscale-0 transition-all duration-700"></iframe>
+                    tabindex="0" title="ALMANYA location map" referrerpolicy="no-referrer-when-downgrade"
+                    class="grayscale hover:grayscale-0 transition-all duration-700 bg-almanya-medLight"></iframe>
             </div>
 
             <div
@@ -945,33 +955,61 @@
             }, 300);
         }
         // Preloader Logic with Fallback for slow mobile connections
+        function shouldLoadHeavyMedia() {
+            const conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+            if (!conn) return true;
+            if (conn.saveData) return false;
+            return !['slow-2g', '2g'].includes(conn.effectiveType);
+        }
+
+        function loadHeroVideo() {
+            if (!shouldLoadHeavyMedia()) return;
+            const heroVideo = document.getElementById('hero-video');
+            if (!heroVideo || heroVideo.dataset.loaded) return;
+            heroVideo.dataset.loaded = '1';
+            const source = document.createElement('source');
+            source.src = 'assets/main.webm?v=6';
+            source.type = 'video/webm';
+            heroVideo.appendChild(source);
+            heroVideo.load();
+            initVideo(heroVideo);
+        }
+
         let preloaderRemoved = false;
         const hidePreloader = () => {
             if (preloaderRemoved) return;
             preloaderRemoved = true;
             const preloader = document.getElementById('preloader');
             if (!preloader) return;
-            // Wait a small amount for effect
             setTimeout(() => {
                 preloader.classList.add('opacity-0');
                 document.body.classList.remove('overflow-hidden');
-                // Ensure hero video plays after preloader fades
-                const heroVideo = document.getElementById('hero-video');
-                if (heroVideo) {
-                    const playPromise = heroVideo.play();
-                    if (playPromise !== undefined) {
-                        playPromise.catch(error => console.log("Autoplay prevented:", error));
-                    }
+                if ('requestIdleCallback' in window) {
+                    requestIdleCallback(loadHeroVideo, { timeout: 2000 });
+                } else {
+                    setTimeout(loadHeroVideo, 300);
                 }
                 setTimeout(() => {
                     preloader.style.display = 'none';
-                }, 1000);
-            }, 500);
+                }, 800);
+            }, 300);
         };
 
-        window.addEventListener('load', hidePreloader);
-        // Fallback: forcefully hide preloader after 3 seconds max
-        setTimeout(hidePreloader, 3000);
+        if (sessionStorage.getItem('alf-visited')) {
+            const preloader = document.getElementById('preloader');
+            if (preloader) preloader.style.display = 'none';
+            document.body.classList.remove('overflow-hidden');
+            preloaderRemoved = true;
+            if ('requestIdleCallback' in window) {
+                requestIdleCallback(loadHeroVideo, { timeout: 1500 });
+            } else {
+                setTimeout(loadHeroVideo, 100);
+            }
+        } else {
+            sessionStorage.setItem('alf-visited', '1');
+            window.addEventListener('load', hidePreloader);
+            setTimeout(hidePreloader, 2000);
+        }
 
         function initVideo(video) {
             video.muted = true;
@@ -998,9 +1036,35 @@
             });
         }, { rootMargin: '200px' });
 
+        const lazyImgObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                const img = entry.target;
+                const src = img.dataset.src;
+                if (!src || img.dataset.loaded) return;
+                img.dataset.loaded = '1';
+                img.src = src;
+                img.classList.remove('img-placeholder');
+                lazyImgObserver.unobserve(img);
+            });
+        }, { rootMargin: '300px' });
+
+        const lazyIframeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                const iframe = entry.target;
+                const src = iframe.dataset.src;
+                if (!src || iframe.dataset.loaded) return;
+                iframe.dataset.loaded = '1';
+                iframe.src = src;
+                lazyIframeObserver.unobserve(iframe);
+            });
+        }, { rootMargin: '200px' });
+
         document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('video[data-src]').forEach(v => lazyVideoObserver.observe(v));
-            document.querySelectorAll('video:not([data-src])').forEach(initVideo);
+            document.querySelectorAll('img[data-src]').forEach(img => lazyImgObserver.observe(img));
+            document.querySelectorAll('iframe[data-src]').forEach(el => lazyIframeObserver.observe(el));
         });
 
         // Scroll to Top Logic (deferred until DOM is fully parsed)
