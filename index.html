@@ -18,9 +18,17 @@
     <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon.png">
     <link rel="apple-touch-icon" href="assets/favicon.png">
 
-    <link
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+    <link rel="preload" href="assets/logo.png" as="image" type="image/png">
+    <link rel="preload" as="style"
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Roboto+Mono:wght@400;700&display=swap"
-        rel="stylesheet">
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Roboto+Mono:wght@400;700&display=swap">
+    </noscript>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -149,7 +157,8 @@
     <!-- Preloader -->
     <div id="preloader"
         class="fixed inset-0 z-[100] bg-white flex flex-col items-center justify-center transition-all duration-1000">
-        <img src="assets/logo.png" alt="ALMANYA Loading" class="h-20 md:h-28 w-auto animate-pulse mb-8">
+        <img src="assets/logo.png" alt="ALMANYA Loading" width="280" height="80" fetchpriority="high"
+            decoding="async" class="h-20 md:h-28 w-auto animate-pulse mb-8">
         <div class="h-1 w-48 bg-almanya-light overflow-hidden rounded-full">
             <div class="h-full bg-almanya-red w-full animate-[progress_1s_ease-in-out]"></div>
         </div>
@@ -158,7 +167,8 @@
     <nav class="fixed w-full z-50 top-0 liquid-glass border-b border-white/20 transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 md:h-28 flex items-center justify-between">
             <a href="#" class="flex-shrink-0">
-                <img src="assets/logo.png" alt="ALMANYA Logo" class="h-10 md:h-24 w-auto object-contain">
+                <img src="assets/logo.png" alt="ALMANYA Logo" width="200" height="96" fetchpriority="high"
+                    decoding="async" class="h-10 md:h-24 w-auto object-contain">
             </a>
 
             <!-- Always Visible Menu -->
@@ -176,7 +186,8 @@
     <header
         class="relative h-screen flex flex-col items-start md:items-center justify-center overflow-hidden bg-[#18181b]">
         <div class="absolute inset-0 w-full h-full z-0 bg-[#18181b]">
-            <video id="hero-video" autoplay loop muted playsinline class="w-full h-full object-cover">
+            <video id="hero-video" autoplay loop muted playsinline preload="metadata"
+                class="w-full h-full object-cover">
                 <source src="assets/main.webm?v=5" type="video/webm">
             </video>
             <div class="absolute inset-0 bg-white/5"></div>
@@ -230,7 +241,7 @@
                     <h3 class="text-xl font-bold text-almanya-darkText uppercase tracking-wide mb-8 flex-grow">Gasoline
                         Engine Oils</h3>
                     <div class="relative h-32 sm:h-40 md:h-48 w-full mt-auto">
-                        <img src="assets/Gasoline.webp" alt="Gasoline Showcase" loading="lazy"
+                        <img src="assets/Gasoline.webp" alt="Gasoline Showcase" loading="lazy" decoding="async"
                             class="absolute inset-0 w-full h-full object-contain mix-blend-multiply opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
                     </div>
                 </div>
@@ -242,7 +253,7 @@
                     <h3 class="text-xl font-bold text-almanya-darkText uppercase tracking-wide mb-8 flex-grow">Diesel
                         Engine Oils</h3>
                     <div class="relative h-32 sm:h-40 md:h-48 w-full mt-auto">
-                        <img src="assets/Diesel.webp" alt="Diesel Showcase" loading="lazy"
+                        <img src="assets/Diesel.webp" alt="Diesel Showcase" loading="lazy" decoding="async"
                             class="absolute inset-0 w-full h-full object-contain mix-blend-multiply opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
                     </div>
                 </div>
@@ -254,7 +265,7 @@
                     <h3 class="text-xl font-bold text-almanya-darkText uppercase tracking-wide mb-8 flex-grow">Marine
                         Lubricants</h3>
                     <div class="relative h-32 sm:h-40 md:h-48 w-full mt-auto">
-                        <img src="assets/marine.webp" alt="Marine Showcase" loading="lazy"
+                        <img src="assets/marine.webp" alt="Marine Showcase" loading="lazy" decoding="async"
                             class="absolute inset-0 w-full h-full object-contain mix-blend-multiply opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
                     </div>
                 </div>
@@ -266,7 +277,7 @@
                     <h3 class="text-xl font-bold text-almanya-darkText uppercase tracking-wide mb-8 flex-grow">
                         Industrial & Hydraulic Oils</h3>
                     <div class="relative h-32 sm:h-40 md:h-48 w-full mt-auto">
-                        <img src="assets/Industrial.webp" alt="Industrial Showcase" loading="lazy"
+                        <img src="assets/Industrial.webp" alt="Industrial Showcase" loading="lazy" decoding="async"
                             class="absolute inset-0 w-full h-full object-contain mix-blend-multiply opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
                     </div>
                 </div>
@@ -278,7 +289,7 @@
                     <h3 class="text-xl font-bold text-almanya-darkText uppercase tracking-wide mb-8 flex-grow">Gear &
                         Turbine Oils</h3>
                     <div class="relative h-32 sm:h-40 md:h-48 w-full mt-auto">
-                        <img src="assets/Gear.webp" alt="Gear Showcase" loading="lazy"
+                        <img src="assets/Gear.webp" alt="Gear Showcase" loading="lazy" decoding="async"
                             class="absolute inset-0 w-full h-full object-contain mix-blend-multiply opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
                     </div>
                 </div>
@@ -319,8 +330,8 @@
             <div
                 class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-center reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
                 <div class="relative h-64 md:h-96 w-full border border-almanya-border shadow-md">
-                    <video src="assets/factory.webm" autoplay loop muted playsinline
-                        class="absolute inset-0 w-full h-full object-cover"></video>
+                    <video data-src="assets/factory.webm" preload="none" autoplay loop muted playsinline
+                        class="lazy-video absolute inset-0 w-full h-full object-cover"></video>
                 </div>
                 <div class="text-left">
                     <h2 class="text-3xl md:text-4xl font-black mb-8 text-almanya-darkText uppercase">Quality <span
@@ -360,10 +371,10 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
                 <article class="cert-card rounded-sm overflow-hidden flex flex-col cursor-pointer group"
-                    onclick="openCertModal('ISO 9001:2015', 'Quality Management System', 'assets/certificates/iso-9001.png', 'Recognizes our commitment to consistent quality in manufacturing crude oils for engines and industrial applications — meeting rigorous international standards for customer satisfaction and continuous improvement.', 'Feb 2027')">
+                    onclick="openCertModal('ISO 9001:2015', 'Quality Management System', 'assets/certificates/iso-9001.webp', 'Recognizes our commitment to consistent quality in manufacturing crude oils for engines and industrial applications — meeting rigorous international standards for customer satisfaction and continuous improvement.', 'Feb 2027')">
                     <div class="cert-frame relative mx-5 mt-5 mb-4 p-3 aspect-[3/4] overflow-hidden">
-                        <img src="assets/certificates/iso-9001.png" alt="ISO 9001:2015 Certificate"
-                            loading="lazy"
+                        <img src="assets/certificates/iso-9001.webp" alt="ISO 9001:2015 Certificate"
+                            loading="lazy" decoding="async" fetchpriority="low"
                             class="w-full h-full object-contain object-top transition-transform duration-500 group-hover:scale-[1.03]">
                         <div class="absolute inset-0 bg-gradient-to-t from-[#18181b]/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-4">
                             <span class="text-white text-xs font-bold uppercase tracking-widest bg-almanya-red/90 px-4 py-2">View Certificate</span>
@@ -384,10 +395,10 @@
                 </article>
 
                 <article class="cert-card rounded-sm overflow-hidden flex flex-col cursor-pointer group"
-                    onclick="openCertModal('ISO 14001:2015', 'Environmental Management System', 'assets/certificates/iso-14001.png', 'Confirms rigorous environmental management across our manufacturing operations — minimizing impact while maintaining excellence in crude oil production for engine and industrial use.', 'May 2029')">
+                    onclick="openCertModal('ISO 14001:2015', 'Environmental Management System', 'assets/certificates/iso-14001.webp', 'Confirms rigorous environmental management across our manufacturing operations — minimizing impact while maintaining excellence in crude oil production for engine and industrial use.', 'May 2029')">
                     <div class="cert-frame relative mx-5 mt-5 mb-4 p-3 aspect-[3/4] overflow-hidden">
-                        <img src="assets/certificates/iso-14001.png" alt="ISO 14001:2015 Certificate"
-                            loading="lazy"
+                        <img src="assets/certificates/iso-14001.webp" alt="ISO 14001:2015 Certificate"
+                            loading="lazy" decoding="async" fetchpriority="low"
                             class="w-full h-full object-contain object-top transition-transform duration-500 group-hover:scale-[1.03]">
                         <div class="absolute inset-0 bg-gradient-to-t from-[#18181b]/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-4">
                             <span class="text-white text-xs font-bold uppercase tracking-widest bg-almanya-red/90 px-4 py-2">View Certificate</span>
@@ -408,10 +419,10 @@
                 </article>
 
                 <article class="cert-card rounded-sm overflow-hidden flex flex-col cursor-pointer group"
-                    onclick="openCertModal('ISO 45001:2018', 'Occupational Health &amp; Safety', 'assets/certificates/iso-45001.png', 'Validates our occupational health and safety management system — protecting our workforce while manufacturing crude oils for engines and industrial purposes to international standards.', 'May 2029')">
+                    onclick="openCertModal('ISO 45001:2018', 'Occupational Health &amp; Safety', 'assets/certificates/iso-45001.webp', 'Validates our occupational health and safety management system — protecting our workforce while manufacturing crude oils for engines and industrial purposes to international standards.', 'May 2029')">
                     <div class="cert-frame relative mx-5 mt-5 mb-4 p-3 aspect-[3/4] overflow-hidden">
-                        <img src="assets/certificates/iso-45001.png" alt="ISO 45001:2018 Certificate"
-                            loading="lazy"
+                        <img src="assets/certificates/iso-45001.webp" alt="ISO 45001:2018 Certificate"
+                            loading="lazy" decoding="async" fetchpriority="low"
                             class="w-full h-full object-contain object-top transition-transform duration-500 group-hover:scale-[1.03]">
                         <div class="absolute inset-0 bg-gradient-to-t from-[#18181b]/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-4">
                             <span class="text-white text-xs font-bold uppercase tracking-widest bg-almanya-red/90 px-4 py-2">View Certificate</span>
@@ -432,10 +443,10 @@
                 </article>
 
                 <article class="cert-card cert-card-certind rounded-sm overflow-hidden flex flex-col cursor-pointer group"
-                    onclick="openCertModal('CERT IND Middle East', 'Official Certification Body', 'assets/certificates/cert-ind.png', 'Official bilingual certificate issued by CERT IND Middle East for ISO 14001:2015 — confirming our environmental management system for the manufacture of crude oils for engines and industrial purposes. Accredited by EGAC and recognized under the IAF multilateral arrangement.', 'May 2027')">
+                    onclick="openCertModal('CERT IND Middle East', 'Official Certification Body', 'assets/certificates/certino-audit.webp', 'Official bilingual certificate issued by CERT IND Middle East for ISO 14001:2015 — confirming our environmental management system for the manufacture of crude oils for engines and industrial purposes. Accredited by EGAC and recognized under the IAF multilateral arrangement.', 'May 2027')">
                     <div class="cert-frame relative mx-5 mt-5 mb-4 p-3 aspect-[3/4] overflow-hidden">
-                        <img src="assets/certificates/cert-ind.png" alt="CERT IND Middle East Certificate"
-                            loading="lazy"
+                        <img src="assets/certificates/certino-audit.webp" alt="CERT IND Middle East Certificate"
+                            loading="lazy" decoding="async" fetchpriority="low"
                             class="w-full h-full object-contain object-top transition-transform duration-500 group-hover:scale-[1.03]">
                         <div class="absolute inset-0 bg-gradient-to-t from-[#18181b]/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-4">
                             <span class="text-white text-xs font-bold uppercase tracking-widest bg-orange-600/90 px-4 py-2">View Certificate</span>
@@ -484,9 +495,8 @@
                 </div>
                 <div
                     class="relative w-full aspect-video border border-almanya-border shadow-md order-1 md:order-2 overflow-hidden">
-                    <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover">
-                        <source src="assets/truck.webm?v=5" type="video/webm">
-                    </video>
+                    <video data-src="assets/truck.webm?v=5" preload="none" autoplay loop muted playsinline
+                        class="lazy-video absolute inset-0 w-full h-full object-cover"></video>
                 </div>
             </div>
         </div>
@@ -501,7 +511,8 @@
                 <iframe
                     src="https://maps.google.com/maps?q=31.034748077392578,29.77499008178711&hl=ar&z=11&output=embed"
                     width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
-                    tabindex="0" class="grayscale hover:grayscale-0 transition-all duration-700"></iframe>
+                    tabindex="0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                    class="grayscale hover:grayscale-0 transition-all duration-700"></iframe>
             </div>
 
             <div
@@ -794,8 +805,8 @@
                             </svg>
                         </a>
                     </div>
-                    <img src="assets/logo.png" alt="ALMANYA Logo"
-                        class="h-10 w-auto md:ml-auto filter brightness-0 invert opacity-80">
+                    <img src="assets/logo.png" alt="ALMANYA Logo" width="120" height="40" loading="lazy"
+                        decoding="async" class="h-10 w-auto md:ml-auto filter brightness-0 invert opacity-80">
                 </div>
             </div>
 
@@ -962,26 +973,34 @@
         // Fallback: forcefully hide preloader after 3 seconds max
         setTimeout(hidePreloader, 3000);
 
-        // Mobile Video Autoplay/Loop Fixes
-        document.addEventListener('DOMContentLoaded', () => {
-            const videos = document.querySelectorAll('video');
-            videos.forEach(video => {
-                // Force muted properties which iOS requires for autoplay
-                video.muted = true;
-                video.defaultMuted = true;
-                video.setAttribute('playsinline', '');
-                
-                // Explicitly attempt play
-                const playPromise = video.play();
-                if (playPromise !== undefined) {
-                    playPromise.catch(error => console.log("Video autoplay blocked by browser:", error));
-                }
+        function initVideo(video) {
+            video.muted = true;
+            video.defaultMuted = true;
+            video.setAttribute('playsinline', '');
+            const playPromise = video.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(() => {});
+            }
+            video.addEventListener('ended', () => video.play());
+        }
 
-                // Force loop if native loop attribute fails
-                video.addEventListener('ended', () => {
-                    video.play();
-                });
+        const lazyVideoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                const video = entry.target;
+                const src = video.dataset.src;
+                if (!src || video.dataset.loaded) return;
+                video.dataset.loaded = '1';
+                video.src = src;
+                video.load();
+                initVideo(video);
+                lazyVideoObserver.unobserve(video);
             });
+        }, { rootMargin: '200px' });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('video[data-src]').forEach(v => lazyVideoObserver.observe(v));
+            document.querySelectorAll('video:not([data-src])').forEach(initVideo);
         });
 
         // Scroll to Top Logic (deferred until DOM is fully parsed)
@@ -1061,7 +1080,8 @@
                 </svg>
             </button>
             <div class="bg-almanya-light p-4 md:p-6 overflow-y-auto max-h-[55vh] md:max-h-[65vh]">
-                <img id="cert-modal-img" src="" alt="Certificate" class="w-full h-auto object-contain mx-auto shadow-lg">
+                <img id="cert-modal-img" src="" alt="Certificate" decoding="async"
+                    class="w-full h-auto object-contain mx-auto shadow-lg">
             </div>
             <div class="p-6 md:p-8 border-t border-almanya-border">
                 <p id="cert-modal-subtitle" class="font-mono text-almanya-gold text-xs uppercase tracking-widest mb-2">Subtitle</p>
